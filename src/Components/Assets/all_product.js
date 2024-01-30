@@ -49,4 +49,6 @@ let all_product = [
         new_price: 50.0,
         old_price:80.5,
     },
-]
+];
+
+export default all_product;
