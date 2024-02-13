@@ -10,5 +10,29 @@ const cors = require("cors");
 app.use(express.json());
 app.use(cors());
 
-/// Database conection with MongooseDB
-mongoose.connect("mongodb+srv://NTHWEBDev:<Weronika01>@cluster0.y3sz4dk.mongodb.net/WerkaDesignWEB")
+/// Database Connection with MongooseDB
+mongoose.connect("mongodb+srv://NTHWEBDev:<Weronika01>@cluster0.y3sz4dk.mongodb.net/WerkaDesignWEB");
+
+/// API Creation
+
+app.get("/",(req,res)=>{
+    res.send("Express App is Running")
+})
+
+// Image Storage Engine
+
+const storage = multer.diskStorage({
+    destination: './upload/images',
+    filename:(req,file,cb)=>{
+        return cb(null,`${file.fieldname}_${Date.now()}${path.extname(file.originalname)}
+    }
+})
+
+app.listen(port,(error)=>{
+    if(!error) {
+        console.log("Server Running on Port "+port)
+    }
+    else{
+        console.log("Error : "+error)
+    }
+})
