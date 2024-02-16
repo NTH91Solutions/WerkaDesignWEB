@@ -11,7 +11,7 @@ app.use(express.json());
 app.use(cors());
 
 /// Database Connection with MongooseDB
-mongoose.connect("mongodb+srv://NTHWEBDev:<Weronika01>@cluster0.y3sz4dk.mongodb.net/WerkaDesignWEB");
+mongoose.connect("mongodb+srv://NTHWEBDev:Weronika02@cluster0.y3sz4dk.mongodb.net/WerkaDesignWEB");
 
 /// API Creation
 
@@ -24,8 +24,19 @@ app.get("/",(req,res)=>{
 const storage = multer.diskStorage({
     destination: './upload/images',
     filename:(req,file,cb)=>{
-        return cb(null,`${file.fieldname}_${Date.now()}${path.extname(file.originalname)}
+        return cb(null,`${file.fieldname}_${Date.now()}${path.extname(file.originalname)}`)
     }
+})
+const upload = multer({storage:storage})
+
+/// Creating Upload Endpoint for image
+app.use('/images',express.static('upload/images'))
+
+app.post("/upload",upload.single( 'product'),(req,res)=>{
+    res.json({
+        success:1,
+        image_url:``
+    })
 })
 
 app.listen(port,(error)=>{
