@@ -14,14 +14,11 @@ app.use(cors());
 mongoose.connect("mongodb+srv://NTHWEBDev:Weronika02@cluster0.y3sz4dk.mongodb.net/WerkaDesignWEB");
 
 /// API Creation
-
 app.get("/",(req,res)=>{
     res.send("Express App is Running")
 })
-haloo
 
 // Image Storage Engine
-
 const storage = multer.diskStorage({
     destination: './upload/images',
     filename:(req,file,cb)=>{
