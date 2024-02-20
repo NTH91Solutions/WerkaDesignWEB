@@ -44,6 +44,10 @@
     object-fit: contain;
     margin: 10px 0px;
 }
+.addproduct-buton{
+    display: flex;
+    justify-content: center;
+}
 .addproduct-btn{
     margin-top: 20px;
     width: 160px;
@@ -55,4 +59,16 @@
     color: white;
     font-size: 16px;
     font-weight: 500;
+}
+@media(max-width:800px){
+    .add-product{
+        width: auto;
+        padding: 30px;
+        margin: 20px;
+    }
+}
+@media(max-width:550px){
+    .addproduct-itemfield input{
+        font-size: 12px;
+    }
 }
