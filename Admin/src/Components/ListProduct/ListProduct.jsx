@@ -4,7 +4,7 @@ import cross_icon from '../../assets/cross_icon.png'
 
 const ListProduct = () => {
 
-  const [allproducts,setAllProducts] = useState([]);
+  const [allProducts,setAllProducts] = useState([]);
 
   const fetchInfo = async ()=>{
     await fetch ('http://localhost:4000/allproducts')
@@ -40,7 +40,7 @@ const ListProduct = () => {
       </div>
       <div className="listproduct-allProducts">
         <hr />
-        {allproducts.map((product,index)=>{
+        {allProducts.map((product,index)=>{
           return <>
           <div key={index} className="listproduct-format-main listproduct-format">
             <img src={product.image} alt="" className="listproduct-product-icon"/>
