@@ -32,6 +32,7 @@
 }
 .listproduct-allProducts{
     overflow-y: auto;
+    width: 100%;
 }
 @media(max-width:800px){
     .list-product{
