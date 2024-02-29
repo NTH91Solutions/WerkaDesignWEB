@@ -8,15 +8,9 @@ function Hero() {
   return (
     <div className='hero'>
         <div className="hero-left">
-            <h2>New Arrivals</h2>
-            <div>
-                <div className="hero-hand-icon">
-                    <p>New</p>
-                    <img src={hand_icon} alt="" />
-                </div>
-                <p>Collections</p>
-                <p>for everyone</p>
-            </div>
+                    <h1>Welcome</h1>
+                    <h2>i am Weronika and welcome to my website. </h2>
+                    <p>Life is about follow your dreams and passions <br /> And this is my dream i am a artist what love ti create from second hand the most betifull items</p>
             <div className="hero-latest-btn">
               <div>Latest Collection</div>
               <img src={arrow_icon} alt="" />  
