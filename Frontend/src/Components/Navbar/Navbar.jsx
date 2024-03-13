@@ -1,11 +1,11 @@
-import React, { useContext, useRef, useState } from 'react'
+import React, { useContext, useRef, useState, useEffect } from 'react'
 import './Navbar.css'
 
 import logo from '../Assets/WDlogo2.png'
 import cart_icon from '../Assets/cart_icon.png'
 import { Link } from "react-router-dom"
 import { ShopContext } from '../../Context/ShopContext'
-import nav_dropdown from '../Assets/dropdown_icon.png'
+import nav_dropdown from '../Assets/DropDown-menuIcon.png'
 
 const Navbar = () => {
 
@@ -18,28 +18,43 @@ const Navbar = () => {
         e.target.classList.toggle('open');
     }
 
+    const [scroll, setScroll] = useState(false);
+    useEffect(() => {
+    window.addEventListener("scroll", () => {
+      setScroll(window.scrollY > 0,1);
+    });
+  });
+
+  
+
   return (
+    <header className={`headerMain ${scroll ? "sticky" : ""}`}>
+    <nav >
     <><div className='navbar'>
       <div className="nav-logo">
-        <img src={logo} alt="" />
+       <img src={logo} alt=""   />
         <p></p>
       </div>
-      <img className='nav-dropdown' onClick={dropdown_toggle} src= {nav_dropdown} alt="" />
-      <ul ref={menuRef} className="nav-menu">
-      <li onClick={()=>{setMenu("shop")}}><Link style={{textDecoration: 'none'}} to='/'>Fashion</Link>{menu==="shop"?<hr/>:<></>}</li>
-        <li onClick={()=>{setMenu("mens")}}><Link style={{textDecoration: 'none'}} to='/mens'>Home Stuff</Link>{menu==="mens"?<hr/>:<></>}</li>
-        <li onClick={()=>{setMenu("womens")}}><Link style={{textDecoration: 'none'}} to='/womens'>Sketch</Link>{menu==="womens"?<hr/>:<></>}</li>
-        <li onClick={()=>{setMenu("kids")}}><Link style={{textDecoration: 'none'}} to='/kids'>Kids</Link>{menu==="kids"?<hr/>:<></>}</li>
-      </ul>
+        <ul ref={menuRef} className="nav-menu">
+        <li onClick={()=>{setMenu("shop")}}><Link style={{textDecoration: 'none'}} to='/'>Home</Link>{menu==="shop"?<hr/>:<></>}</li>
+          <li onClick={()=>{setMenu("mens")}}><Link style={{textDecoration: 'none'}} to='/mens'>Fashion</Link>{menu==="mens"?<hr/>:<></>}</li>
+          <li onClick={()=>{setMenu("womens")}}><Link style={{textDecoration: 'none'}} to='/womens'>@ HomeStuff</Link>{menu==="womens"?<hr/>:<></>}</li>
+          <li onClick={()=>{setMenu("kids")}}><Link style={{textDecoration: 'none'}} to='/kids'>Art</Link>{menu==="kids"?<hr/>:<></>}</li>
+        </ul>
       <div className="nav-login-cart">
         {localStorage.getItem('auth-token')
         ?<button onClick={()=>{localStorage.removeItem('auth-token');window.location.replace('/')}}>Logout</button>
         :<Link to='/login'><button>Login</button></Link>}
         <Link to='/cart'><img src={cart_icon} alt="" /></Link>
         <div className="nav-cart-count">{getTotalCartItems()}</div>
+        <div className='nav-cart-dropdownmenu'><img className='nav-dropdown' onClick={dropdown_toggle} src= {nav_dropdown} alt="" /></div>
       </div>
+      
     </div></>
+    </nav>
+  </header>
   )
+  
 }
 
 export default Navbar

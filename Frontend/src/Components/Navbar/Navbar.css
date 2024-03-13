@@ -1,9 +1,32 @@
+@keyframes fadeInDown {
+    0% {
+      opacity: 0;
+      transform: translateY(-5px);
+      
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0px);
+      
+    }
+}
+  
+  .sticky {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    background: white;
+    .navbar{
+        background: none;
+    }
+  }
 .navbar{
     display: flex;
     justify-content: space-around;
     padding: 16px;
     box-shadow: 0 1px 3px -2px black;
     align-items: center;
+    background: linear-gradient(360deg, rgb(226, 222, 187) , #e1ffea22 60%);
 }
 .nav-logo{
     display: flex;
@@ -135,30 +158,43 @@
 @media(max-width:800px){
     .navbar{
         padding: 10px 0px;
+        justify-content:none;
+        align-items: none;
+    }
+    .nav-login-cart{
+        gap: 25px;
     }
     .nav-dropdown{
         display: block;
-        width: 30px;
-        rotate: -90deg;
-        transition: 0.5s;
+        transition: 1s;
+    }
+    .menu-container{
+        flex-wrap: wrap;
+        flex-direction: flex-end;
     }
     .nav-menu{
+        flex-direction: column;
         display: none;
-        height: 50px;
-        width: 100%;
-        position: absolute;
-        background-color: white;
+        height: 170px;
+        width: 130px;
+        position: fixed;
         justify-content: center;
-        top: 65px;
+        background-color: white;
+        align-items: flex-start;
+        top: 74px;
+        
     }
     .nav-menu-visible{
         display: flex;
     }
     .nav-dropdown.open{
-        transform: rotate(90deg);
+        transform: rotate(180deg);
     }
     .nav-login-cart img{
         width: 30px;
+    }
+    .nav-cart-dropdownmenu img{
+        width: 35px;
     }
 }
 @media(max-width:500px){
