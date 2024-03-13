@@ -63,6 +63,7 @@ const LoginSignup = () => {
             {state==="Sign up"?<input name='username' value={formData.username} onChange={changeHandler} type="text" placeholder='Your Name' />:<></>}
             <input name='email' value={formData.email} onChange={changeHandler} type="email" placeholder='Email Adress' />
             <input name='password' value={formData.password} onChange={changeHandler} type="password" placeholder='Password' />
+            {state==="Sign up"?<input name='password2' value={formData.password} onChange={changeHandler} type="password" placeholder='Repeat Password'/>:<></>}
           </div>
           {state==="Sign up"?<div className="loginsignup-agree">
             <input type="checkbox" name='' id=''/>
