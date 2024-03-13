@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
 import './CSS/LoginSignup.css'
+import { Link } from "react-router-dom"
 
 const LoginSignup = () => {
 
-  const [state,setState] = useState('Login');
   const [formData,setFormData] = useState({
     username:"",
     password:"",
@@ -34,45 +34,17 @@ const LoginSignup = () => {
       alert(responseData.errors)
     }
   }
-  const signup = async () =>{
-    console.log("Signup Function Executed",formData)
-    let responseData;
-    await fetch('http://localhost:4000/signup',{
-      method:'POST',
-      headers:{
-        Accept:'application/form-data',
-        'Content-Type':'application/json',
-      },
-      body: JSON.stringify(formData),
-    }).then((response)=> response.json()).then((data)=>responseData=data)
-
-    if(responseData.success){
-      localStorage.setItem('auth-token',responseData.token);
-      window.location.replace("/");
-    }
-    else{
-      alert(responseData.errors)
-    }
-  }
   
   return (
-    <div className='loginsignup'>
-        <div className="loginsignup-container">
-          <h1>{state}</h1>
-          <div className="loginsignup-fields">
-            {state==="Sign up"?<input name='username' value={formData.username} onChange={changeHandler} type="text" placeholder='Your Name' />:<></>}
+    <div className='loginsign-up'>
+        <div className="loginsign-up-container">
+          <h1>Login</h1>
+          <div className="loginsign-up-fields">
             <input name='email' value={formData.email} onChange={changeHandler} type="email" placeholder='Email Adress' />
             <input name='password' value={formData.password} onChange={changeHandler} type="password" placeholder='Password' />
-            {state==="Sign up"?<input name='password2' value={formData.password} onChange={changeHandler} type="password" placeholder='Repeat Password'/>:<></>}
           </div>
-          {state==="Sign up"?<div className="loginsignup-agree">
-            <input type="checkbox" name='' id=''/>
-            <p>By continuing, i agree to the term of use & privacy policy</p>
-          </div>:<></>}
-          {state==="Sign up"?<button onClick={()=>{state==="Sign up"?signup():<></>}} >Continue</button>
-          :<button onClick={()=>{state==="Login"?login():<></>}} >Login</button>}
-         {state==="Sign up"?<p className='loginsignup-login'>Already have an Account? <span onClick={()=>{setState("Login")}}> Login Here</span> </p>
-         :<p className='loginsignup-login'>Create an account? <span onClick={()=>{setState("Sign up")}}> Click Here</span> </p>}
+          <button onClick={()=>{login()}} >Login</button>
+         <p className='loginsign-up-login'>Create an account? <Link to='/SignUp' style={{textDecoration: 'none'}}><span> Click Here</span></Link></p>
         </div>  
     </div>
   )
