@@ -1,11 +1,11 @@
-.loginsignup{
+.welcome{
     width: 100%;
     height: 86vh;
     background: #fce3fe;
     padding-top: 50px;
     margin-bottom: 35px;
 }
-.loginsignup-container{
+.welcome-container{
     width: 580px;
     height: 685px;
     background: white;
@@ -17,16 +17,17 @@
     margin-top: -8px;
     margin-bottom: 10px;
 }
-.loginsignup-container h1{
+.welcome-container h1{
     margin: 7px 0px;
+    font-size: 40px;
 }
-.loginsignup-fields{
+.welcome-fields{
     display: flex;
     flex-direction: column;
     gap: 9px;
     margin-top: 30px; 
 }
-.loginsignup-fields input{
+.welcome-fields input{
     height: 72px;
     width: 100%;
     padding-left: 20px;
@@ -35,7 +36,7 @@
     color: #5c5c5c;
     font-size: 18px;
 }
-.loginsignup-agree{
+.welcome-agree{
     display: flex;
     align-items: center;
     margin-top: 0px;
@@ -45,7 +46,7 @@
     font-size: 18px;
     font-weight: 500;
 }
-.loginsignup-container button{
+.welcome-container button{
     width: 600px;
     height: 72px;
     color: white;
@@ -56,77 +57,77 @@
     font-weight: 500;
     cursor: pointer;
 }
-.loginsignup-login{
+.welcome-login{
     margin-top: 5px;
     color: rgb(239, 105, 127);
     font-size: 18px;                    
     font-weight: 500;
 }
-.loginsignup-login span{
+.welcome-login span{
     color: rgb(239, 105, 127);
     font-weight: 600;
     cursor: pointer;
 }
-.loginsignup-login span:hover{
+.welcome-login span:hover{
     text-decoration: underline;
 }
 @media(max-width:1280px){
-    .loginsignup{
+    .welcome{
         height: 81vh;
     }
-    .loginsignup-container{
+    .welcome-container{
         height: 615px;
     }
-    .loginsignup-container h1{
+    .welcome-container h1{
         margin: 5px 0px;
     }
-    .loginsignup-fields{
+    .welcome-fields{
         gap: 5px;
         margin-top: 20px;
     }
-    .loginsignup-fields input{
+    .welcome-fields input{
         height: 65px;
         width:93%;
     }
-    .loginsignup-container button{
+    .welcome-container button{
         width: 560px;
     }
-    .loginsignup-login{
+    .welcome-login{
         font-size: 16px;
     }
-    .loginsignup-agree{
+    .welcome-agree{
         font-size: 14px;
         gap: 10px;
     }
 }
 @media(max-width:800px){
-    .loginsignup{
+    .welcome{
         height: 69vh;
     }
-    .loginsignup-container{
+    .welcome-container{
         padding: 20px 30px;
         height: 550px;
     }
-    .loginsignup-container h1{
+    .welcome-container h1{
         font-size: 24;
     }
-    .loginsignup-fields{
+    .welcome-fields{
         margin-top: 20px;
     }
-    .loginsignup-fields input{
+    .welcome-fields input{
         height: 50px;
     }
-    .loginsignup-container button{
+    .welcome-container button{
         height: 50px;
         font-size: 16px;
     }
 
 }
 @media(max-width:600px){
-    .loginsignup-fields{
+    .welcome-fields{
         width: 430px;
     }
-    .loginsignup-container button{
+    .welcome-container button{
         width: 430px;
     }
     

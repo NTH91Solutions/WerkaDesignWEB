@@ -36,10 +36,10 @@ const Navbar = () => {
         <p></p>
       </div>
         <ul ref={menuRef} className="nav-menu">
-        <li onClick={()=>{setMenu("shop")}}><Link style={{textDecoration: 'none'}} to='/'>Home</Link>{menu==="shop"?<hr/>:<></>}</li>
-          <li onClick={()=>{setMenu("mens")}}><Link style={{textDecoration: 'none'}} to='/mens'>Fashion</Link>{menu==="mens"?<hr/>:<></>}</li>
-          <li onClick={()=>{setMenu("womens")}}><Link style={{textDecoration: 'none'}} to='/womens'>@ HomeStuff</Link>{menu==="womens"?<hr/>:<></>}</li>
-          <li onClick={()=>{setMenu("kids")}}><Link style={{textDecoration: 'none'}} to='/kids'>Art</Link>{menu==="kids"?<hr/>:<></>}</li>
+        <li onClick={()=>{setMenu("Home")}}><Link style={{textDecoration: 'none'}} to='/'>Home</Link>{menu==="home"?<hr/>:<></>}</li>
+          <li onClick={()=>{setMenu("Fashion")}}><Link style={{textDecoration: 'none'}} to='/fashion'>Fashion</Link>{menu==="fashion"?<hr/>:<></>}</li>
+          <li onClick={()=>{setMenu("Homestuff")}}><Link style={{textDecoration: 'none'}} to='/homestuff'>HomeStuff</Link>{menu==="womens"?<hr/>:<></>}</li>
+          <li onClick={()=>{setMenu("kids")}}><Link style={{textDecoration: 'none'}} to='/art'>Art</Link>{menu==="kids"?<hr/>:<></>}</li>
         </ul>
       <div className="nav-login-cart">
         {localStorage.getItem('auth-token')

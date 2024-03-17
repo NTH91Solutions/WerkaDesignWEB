@@ -111,11 +111,28 @@ app.post('/removeproduct',async (req,res)=>{
     })
 })
 
+// Creating API for Deleting Products
+app.post('/removeuser',async (req,res)=>{
+    await Users.findOneAndDelete({id:req.body.id});
+    console.log("Removed");
+    res.json({
+        success:true,
+        name:req.body.name
+    })
+})
+
 // Creating API for getting all products
 app.get('/allproducts',async (req,res)=>{
     let products = await Product.find({});
     console.log("All products Fetched");
     res.send(products);
+})
+
+// Creating API for getting all users
+app.get('/allusers',async (req,res)=>{
+    let users = await Users.find({});
+    console.log("All Users Fetched");
+    res.send(users);
 })
 
 // Schema creating for User model
@@ -250,6 +267,13 @@ app.post('/getcart',fetchUser,async (req,res)=>{
     console.log("GetCart");
     let userData = await Users.findOne({_id:req.user.id});
     res.json(userData.cartData);
+})
+
+// Creating endpoint to get user's name
+app.post('/getname',fetchUser,async (req,res)=>{
+    console.log("GetName");
+    let userData = await Users.findOne({_id:req.user.id});
+    res.json(userData.name);
 })
 
 app.listen(port,(error)=>{
