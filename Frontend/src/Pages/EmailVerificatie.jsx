@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import './CSS/SignUp.css'
 import { Link } from "react-router-dom"
 
-const SignUp = () => {
+const EmailVerificatie = () => {
 
     const [formData,setFormData] = useState({
       username:"",
@@ -91,7 +91,7 @@ const SignUp = () => {
     
         if(responseData.success){
           localStorage.setItem('auth-token',responseData.token);
-          window.location.replace("/emailverificatie");
+          window.location.replace("/");
         }
         else{
           alert(responseData.errors)
@@ -101,26 +101,9 @@ const SignUp = () => {
     return (
       <form className='loginsignup' onSubmit={handleSubmit}>
           <div className="loginsignup-container">
-            <h1>Sign Up</h1>
-            <div className="loginsignup-fields">
-              <input name='username' value={formData.username} onChange={changeHandler} type="text" placeholder='Your Name' />
-              <p className='formDataError'>{formErrors.username}</p>
-              <input name='email' value={formData.email} onChange={changeHandler} type="email" placeholder='Email Adress' />
-              <p className='formDataError'>{formErrors.email}</p>
-              <input name='password' value={formData.password} onChange={changeHandler} type="password" placeholder='Password' />
-              <p className='formDataError'>{formErrors.password}</p>
-              <input name='password2' value={formData.password2} onChange={changeHandler} type="password" placeholder='Repeat Password'/>
-              <p className='formDataError'>{formErrors.password2}</p>
-            </div>
-            <div className="loginsignup-agree">
-            <input type="checkbox" id="checkbox" checked={isChecked} onChange={checkHandler}/>
-              <p >By continuing, i agree to the term of use & privacy policy</p>
-            </div>
-            <p className='formDataError'>{formErrors.check}</p>
-              <button  >Continue</button>
-              <p className='loginsignup-login' >Already have an Account? <Link to='/Login'style={{textDecoration: 'none'}}><span> Login Here</span></Link></p>
+           <h1>emailverificatie</h1>
           </div>  
       </form>
     )
   }
-  export default SignUp
+  export default EmailVerificatie

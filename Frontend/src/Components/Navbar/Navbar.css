@@ -26,7 +26,7 @@
     padding: 16px;
     box-shadow: 0 1px 3px -2px black;
     align-items: center;
-    background: linear-gradient(360deg, rgb(226, 222, 187) , #e1ffea22 60%);
+    background: linear-gradient(360deg, rgb(226, 187, 207) , #e1ffea22 60%);
 }
 .nav-logo{
     display: flex;
