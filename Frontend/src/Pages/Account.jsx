@@ -1,5 +1,5 @@
 import React, { useState, useEffect, } from 'react'
-import './CSS/Welcome.css'
+import './CSS/Account.css'
 import Sidebar from '../Components/Sidebar/Sidebar.jsx'
 import { Routes,Route} from 'react-router-dom'
 import Accountdetails from '../Components/Accountdetails/Accountdetails.jsx'
