@@ -14,6 +14,7 @@ import women_banner from './Components/Assets/banner_women.png';
 import kid_banner from './Components/Assets/banner_kids.png';
 import EmailVerificatie from './Pages/EmailVerificatie';
 import Welcome from './Pages/Welcome';
+import Account from './Pages/Account';
 
 
 function App() {
@@ -34,6 +35,7 @@ function App() {
         <Route path='/signup' element={<SignUp/>}/>
         <Route path='/welcome' element={<Welcome/>}/>
         <Route path='/emailverificatie' element={<EmailVerificatie/>}/>
+        <Route path='/account' element={<Account/>}/>
       </Routes>
       <Footer/>
       </BrowserRouter>

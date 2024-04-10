@@ -58,7 +58,31 @@
 .nav-login-cart{
     display: flex;
     align-items: center;
-    gap: 45px;
+    gap: 30px;
+}
+.nav-login{
+    
+    
+}
+.nav-login img{
+    display: flex;
+    margin-left: 12px;
+    margin-top: -20px;
+    width: 40px;
+    height: 40px;
+    
+    
+}
+.nav-login h1{
+    
+    font-size: 13px;
+    text-align: center;
+    text
+    justify-content: center;
+    margin-bottom: -20px;
+    
+    
+   
 }
 .nav-login-cart button{
     width: 100px;
@@ -87,7 +111,7 @@
     justify-content: center;
     align-items: center;
     margin-top: -35px;
-    margin-left: -55px;
+    margin-left: -40px;
     border-radius: 11px;
     font-size: 14px;
     background: red;
